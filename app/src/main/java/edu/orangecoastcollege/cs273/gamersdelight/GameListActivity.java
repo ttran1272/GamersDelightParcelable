@@ -26,9 +26,10 @@ public class GameListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
 
-        this.deleteDatabase(DBHelper.DATABASE_NAME);
+        this.deleteDatabase(DBHelper.DATABASE_NAME); // should not be used in the real app
         db = new DBHelper(this);
 
+        // In the real app, those lines should be commented out after the first run
         db.addGame(new Game("League of Legends", "Multiplayer online battle arena", 4.5f, "lol.png"));
         db.addGame(new Game("Dark Souls III", "Action role-playing", 4.0f, "ds3.png"));
         db.addGame(new Game("The Division", "Single player experience", 3.5f, "division.png"));
